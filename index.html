@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farzad Rahnama | Senior Infrastructure Specialist & System Administrator</title>
+  <meta name="description" content="Portfolio of Farzad Rahnama - Senior Infrastructure & Network Specialist with 8+ years experience in enterprise IT, virtualization, Linux/Windows administration, security, and AI-accelerated automation.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- FontAwesome & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              accent: '#38bdf8',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .terminal-header {
+      background: rgba(30, 41, 59, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-effect {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Background Decorative Ambient Glows -->
+  <div class="glow-effect top-0 left-1/4 -translate-x-1/2"></div>
+  <div class="glow-effect top-1/3 right-10"></div>
+  <div class="glow-effect bottom-10 left-10"></div>
+
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-card bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          FR
+        </div>
+        <div>
+          <span class="font-bold text-slate-100 tracking-tight block text-sm sm:text-base group-hover:text-sky-400 transition-colors">Farzad Rahnama</span>
+          <span class="text-xs text-slate-400 font-mono block sm:inline">Infrastructure Specialist</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-sky-400 transition-colors">Featured Projects</a>
+        <a href="#skills" class="hover:text-sky-400 transition-colors">Technical Skills</a>
+        <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+        <a href="#certifications" class="hover:text-sky-400 transition-colors">Certifications</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:farzadrahnama2@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs sm:text-sm transition-all shadow-md shadow-sky-600/20">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Get In Touch</span>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-4 space-y-3 font-medium text-slate-300 text-sm">
+      <a href="#about" class="block hover:text-sky-400 py-1">About</a>
+      <a href="#projects" class="block hover:text-sky-400 py-1">Featured Projects</a>
+      <a href="#skills" class="block hover:text-sky-400 py-1">Technical Skills</a>
+      <a href="#experience" class="block hover:text-sky-400 py-1">Experience</a>
+      <a href="#certifications" class="block hover:text-sky-400 py-1">Certifications</a>
+      <a href="mailto:farzadrahnama2@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-600 text-white font-medium text-xs">
+        <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Bio Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Available for Enterprise Infrastructure & Remote Ops</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Senior Infrastructure Specialist & <span class="gradient-text">System Administrator</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <strong class="text-white font-semibold">8+ years of enterprise experience</strong> operating high-availability Windows & Linux environments, virtualization, network security, multi-site backup systems, and modern <span class="text-sky-400 font-mono">AI-assisted infrastructure automation</span>.
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-400">
+            Currently supporting infrastructure for ~10 mid-sized companies in collaboration with a German IT partner (<em class="text-slate-300">Network4You, Munich</em>).
+          </p>
+
+          <!-- Highlights Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-medium text-slate-300">
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="server" class="w-4 h-4 text-sky-400"></i>
+              <span>VMware & Hyper-V</span>
+            </div>
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+              <span>Multi-Vendor Firewalls</span>
+            </div>
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="code-2" class="w-4 h-4 text-indigo-400"></i>
+              <span>Python / PowerShell AI Tools</span>
+            </div>
+          </div>
+
+          <!-- Buttons & Links -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all flex items-center gap-2">
+              <i data-lucide="box" class="w-4 h-4"></i>
+              <span>Explore Featured Projects</span>
+            </a>
+            <a href="https://github.com/farzadrahnama" target="_blank" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+              <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+              <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Widget Column -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+            <!-- Mac style window dots -->
+            <div class="terminal-header px-4 py-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
+              <span class="text-xs font-mono text-slate-400">farzad@infra-node-01:~</span>
+              <div class="w-4"></div>
+            </div>
+            
+            <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 space-y-3 bg-slate-950/90 leading-relaxed">
+              <div class="flex items-center gap-2 text-slate-400">
+                <span class="text-emerald-400">$</span>
+                <span>sysinfo --summary</span>
+              </div>
+              <div class="pl-4 border-l-2 border-sky-500/40 space-y-1.5 text-slate-300">
+                <p><span class="text-slate-500">Host:</span> Farzad Rahnama (Tehran, Iran)</p>
+                <p><span class="text-slate-500">Education:</span> MS Computer Engineering (GPA 3.5)</p>
+                <p><span class="text-slate-500">Role:</span> Senior System Admin @ Techranco / Network4You</p>
+                <p><span class="text-slate-500">Core Stack:</span> VMware ESXi, Hyper-V, FortiGate, Zabbix, Veeam</p>
+                <p><span class="text-slate-500">Automation:</span> Python (FastAPI, SQLite), PowerShell, Docker</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-slate-400 pt-2">
+                <span class="text-emerald-400">$</span>
+                <span>check-status --active-services</span>
+              </div>
+              <div class="pl-4 border-l-2 border-emerald-500/40 space-y-1 text-xs">
+                <p class="text-emerald-400">✔ Enterprise Virtualization & Clusters [OPERATIONAL]</p>
+                <p class="text-emerald-400">✔ Veeam Backup & Disaster Recovery [READY]</p>
+                <p class="text-emerald-400">✔ Multi-Site Security & Firewalls [HARDENED]</p>
+                <p class="text-emerald-400">✔ AI-Accelerated Custom Infrastructure [ONLINE]</p>
+              </div>
+
+              <div class="pt-3 text-slate-500 text-xs flex items-center justify-between border-t border-slate-800">
+                <span>Status: Available for technical consultations</span>
+                <span class="text-sky-400 animate-pulse">● Live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-mono">
+          <i data-lucide="code" class="w-3.5 h-3.5"></i>
+          <span>Engineering & Custom Infrastructure</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Featured Projects & Open Source</h2>
+        <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
+          Demonstrating high-performance networking tools, custom automation platforms, and enterprise virtualization migrations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- PROJECT 1: Gaming SmartDNS & SNI Proxy Hub -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover flex flex-col justify-between border border-slate-800">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono font-medium">Featured Open Source</span>
+              <a href="https://github.com/farzadrahnama/gaming-smartdns" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors flex items-center gap-1 text-xs">
+                <span>View on GitHub</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">
+              Gaming SmartDNS & Transparent SNI Proxy Hub
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Architected and developed an ultra-low-latency SmartDNS and transparent SNI proxy platform leveraging AI-assisted agentic engineering ("vibe coding") to bypass regional geo-restrictions with <strong class="text-white">sub-1ms overhead</strong> and <strong class="text-emerald-400">0ms added in-game ping</strong>.
+            </p>
+
+            <!-- Key Features Bullet List -->
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Multi-tenant FastAPI Web Portal:</strong> SQLite ORM backend, dynamic 1-click tokenized IP whitelisting & live DNS query sniffing.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Automated Linux Security:</strong> Kernel firewall rule integration (<code class="text-sky-300 font-mono">ipset + iptables</code>) dropping unauthorized query traffic to mitigate DDoS risks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Production Packaging:</strong> Unattended Linux deployment scripts (<code class="text-sky-300 font-mono">setup.sh</code>), systemd persistent services, and containerized Docker setup.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Python (FastAPI)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">SmartDNS / SNI Proxy</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Linux Kernel Firewall</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Docker</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-purple-300">AI Agentic Coding</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Enterprise Infrastructure Migrations & Automation -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover flex flex-col justify-between border border-slate-800">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-mono font-medium">Enterprise Operation</span>
+              <span class="text-slate-500 text-xs font-mono">Multi-Client Deployment</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white">
+              Enterprise ESXi-to-Hyper-V & Zabbix Automation
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Planned and executed multi-environment virtualization migrations and standardized monitoring agent deployment pipelines across multi-site enterprise networks.
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Hypervisor Migration:</strong> VMware ESXi to Microsoft Hyper-V migration with complete environment validation, controlled cutovers, and zero data loss.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Zabbix Monitoring Standardization:</strong> Automated Zabbix agent deployment and updates across multi-site Windows environments using Group Policy (GPO) & PowerShell scripts.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">Disaster Recovery Readiness:</strong> Veeam Backup & Replication upgrades, repository maintenance, host components, and automated recovery verification.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">VMware ESXi</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Microsoft Hyper-V</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Zabbix</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">PowerShell Scripting</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Veeam Backup</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX SECTION -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-mono">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>Competencies</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Core Technical Skills</h2>
+        <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
+          Comprehensive enterprise infrastructure stack spanning system administration, networking, security, virtualization, and modern software scripting.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Skill Card 1: Windows & Identity -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-2">
+            <i data-lucide="monitor" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Windows & Identity Services</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Windows Server, Active Directory, Group Policy (GPO), DNS, DHCP, Exchange Server 2019, SCCM endpoint management, user & access control.
+          </p>
+        </div>
+
+        <!-- Skill Card 2: Linux & Administration -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 mb-2">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Linux & Administration</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Linux/Ubuntu server administration, service troubleshooting, kernel security patching, systemd services, Bash, Git repository management.
+          </p>
+        </div>
+
+        <!-- Skill Card 3: Virtualization & Storage -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-2">
+            <i data-lucide="hard-drive" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Virtualization & Backup</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            VMware ESXi, vCenter, Microsoft Hyper-V, Veeam Backup & Replication, storage capacity monitoring, recovery readiness verification.
+          </p>
+        </div>
+
+        <!-- Skill Card 4: Networking & Connectivity -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-2">
+            <i data-lucide="network" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Networking & Connectivity</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            TCP/IP, VLANs, LAN/WAN, Cisco switching & routing, fiber optics, wireless infrastructure (Ubiquiti UniFi, D-Link), routing protocols.
+          </p>
+        </div>
+
+        <!-- Skill Card 5: Security & Firewalls -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 mb-2">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Security & Hardening</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            FortiGate, Juniper, Sophos, WatchGuard, Securepoint, Cyberoam, Trend Micro, Cisco ISE (AAA), TLS/certificates, ipset & iptables.
+          </p>
+        </div>
+
+        <!-- Skill Card 6: AI-Assisted Automation & Dev -->
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800 relative overflow-hidden">
+          <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-sky-500/10 rounded-full blur-xl"></div>
+          <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 mb-2">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">AI Automation ("Vibe Coding")</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Rapid prototyping with AI coding agents, Python (FastAPI, SQLite), PowerShell scripts, REST APIs, Docker containers, GitHub CI/CD pipelines.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>Career Journey</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Professional Experience</h2>
+      </div>
+
+      <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-6 space-y-12">
+        
+        <!-- EXPERIENCE 1: Techranco -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 ring-4 ring-slate-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">System Administrator</h3>
+                <p class="text-sky-400 text-sm font-medium">Techranco <span class="text-slate-400 font-normal">| Partnered with Network4You (Munich, Germany)</span></p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Feb 2025 – Present</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Deliver infrastructure administration for ~10 mid-sized companies in collaboration with German partners.</li>
+              <li>Administer Active Directory, Group Policy, DNS/DHCP, Exchange 2019, VMware ESXi/vCenter, and Hyper-V.</li>
+              <li>Manage Veeam Backup & Replication repositories, virtual disks, and recovery readiness across client sites.</li>
+              <li>Utilize Zabbix and NinjaOne health data to detect outages, backup failures, and performance bottlenecks proactively.</li>
+              <li>Configure FortiGate, Sophos, WatchGuard, and Securepoint firewalls to ensure secure infrastructure operations.</li>
+              <li>Support developer teams via Git repository administration and AI-accelerated PowerShell/Python tooling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2: Davar Moharek Co. -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-950 group-hover:bg-sky-500 transition-colors"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">Information Technology Specialist</h3>
+                <p class="text-sky-400 text-sm font-medium">Davar Moharek Co. (DMC)</p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">May 2021 – Feb 2025</span>
+            </div>
+
+            <p class="text-xs text-slate-400 font-mono">Environment: FortiGate, Juniper, Windows Server, VMware ESXi/vCenter, Exchange, SCCM, SolarWinds, PRTG.</p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Replaced legacy software firewalls with hardware appliances (FortiGate & Juniper) to strengthen network defense.</li>
+              <li>Implemented SolarWinds and PRTG proactive monitoring, accelerating fault isolation and reducing service downtime.</li>
+              <li>Upgraded ESXi hosts and deployed VMware vCenter to centralize virtualization management and resource optimization.</li>
+              <li>Migrated SMB file sharing to Microsoft cloud solutions and enforced centralized software deployment via SCCM.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 3: Middle East Industrial Gas Turbines Company -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-950 group-hover:bg-sky-500 transition-colors"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">Network Specialist</h3>
+                <p class="text-sky-400 text-sm font-medium">Middle East Industrial Gas Turbines Company (MIGT)</p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Nov 2017 – May 2021</span>
+            </div>
+
+            <p class="text-xs text-slate-400 font-mono">Environment: Cisco Switching/Routing, Cyberoam, Sophos, Cisco ISE, Kali Linux, PRTG.</p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>Configured and maintained Cisco switches and routers to optimize traffic flow, redundancy, and network availability.</li>
+              <li>Implemented Cisco ISE (AAA) and Cyberoam/Sophos firewalls to strengthen LAN/WLAN access security.</li>
+              <li>Performed controlled penetration testing with Kali Linux for network vulnerability detection and security hardening.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & EDUCATION SECTION -->
+    <section id="certifications" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Certifications -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-mono">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>Professional Credentials</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">Certifications & Research</h2>
+
+          <div class="space-y-3">
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-red-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">CEH v10 – Certified Ethical Hacker</h4>
+                  <p class="text-xs text-slate-400">EC-Council (2020)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="network" class="w-5 h-5 text-sky-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">CCNP Boot Camp & CCNA Security</h4>
+                  <p class="text-xs text-slate-400">Cisco Certified Network Professional / Security (2019)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="cloud" class="w-5 h-5 text-blue-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">MCSE – Cloud Platform & Infrastructure Pack</h4>
+                  <p class="text-xs text-slate-400">Microsoft Certified Systems Engineer (2018)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="book-open" class="w-5 h-5 text-purple-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Published Research Paper</h4>
+                  <p class="text-xs text-slate-400">“Intrusion Detection using Attack Behavior Classification” (Civilica, May 2017)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-mono">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            <span>Academic Background</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">Education</h2>
+
+          <div class="space-y-4">
+            <div class="glass-card p-6 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-start">
+                <h4 class="text-base font-bold text-white">Master of Computer Engineering (Software)</h4>
+                <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded">GPA 3.5 / 4.0</span>
+              </div>
+              <p class="text-sm text-slate-300">University of Science and Culture, Tehran</p>
+              <p class="text-xs text-slate-500 font-mono">2014 – 2016</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-start">
+                <h4 class="text-base font-bold text-white">Bachelor of Computer Engineering (Software Technology)</h4>
+                <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded">GPA 3.6 / 4.0</span>
+              </div>
+              <p class="text-sm text-slate-300">Islamic Azad University, Lahijan Branch</p>
+              <p class="text-xs text-slate-500 font-mono">2011 – 2013</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT BANNER -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 border-t border-slate-800/80">
+      <div class="glass-card rounded-2xl p-8 sm:p-12 text-center space-y-6 border border-slate-800">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Let's Build & Secure Reliable Infrastructure
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+          Whether you need enterprise IT operations support, virtualization migrations, network security, or custom infrastructure automation tools.
+        </p>
+        
+        <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+          <a href="mailto:farzadrahnama2@gmail.com" class="px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm transition-all shadow-lg shadow-sky-600/20 flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>farzadrahnama2@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="px-6 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© 2026 Farzad Rahnama. Built with HTML5 & Tailwind CSS.</p>
+          <div class="flex items-center gap-4">
+            <a href="https://github.com/farzadrahnama" target="_blank" class="hover:text-slate-300">GitHub</a>
+            <span>•</span>
+            <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="hover:text-slate-300">LinkedIn</a>
+            <span>•</span>
+            <span>Tehran, Iran (+98 938 712 8048)</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
