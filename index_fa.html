@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فرزاد رهنما | متخصص ارشد زیرساخت و مدیر سیستم</title>
+  <meta name="description" content="وب‌سایت شخصی و پورتفولیو فرزاد رهنما - متخصص ارشد زیرساخت و شبکه با بیش از ۸ سال سابقه در مجازی‌سازی، امنیت، مدیریت لینوکس و ویندوز و اتوماسیون هوش مصنوعی.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Vazirmatn Persian Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Vazirmatn', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .terminal-header {
+      background: rgba(30, 41, 59, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-effect {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Background Ambient Glows -->
+  <div class="glow-effect top-0 right-1/4 translate-x-1/2"></div>
+  <div class="glow-effect top-1/3 left-10"></div>
+  <div class="glow-effect bottom-10 right-10"></div>
+
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-card bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          FR
+        </div>
+        <div>
+          <span class="font-bold text-slate-100 tracking-tight block text-sm sm:text-base group-hover:text-sky-400 transition-colors">فرزاد رهنما</span>
+          <span class="text-xs text-slate-400 block sm:inline">متخصص زیرساخت و شبکه</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-sky-400 transition-colors">درباره من</a>
+        <a href="#projects" class="hover:text-sky-400 transition-colors">پروژه‌های شاخص</a>
+        <a href="#skills" class="hover:text-sky-400 transition-colors">مهارت‌های تخصصی</a>
+        <a href="#experience" class="hover:text-sky-400 transition-colors">سوابق شغلی</a>
+        <a href="#certifications" class="hover:text-sky-400 transition-colors">مدارک و تحصيلات</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Button -->
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-semibold transition-all border border-slate-700">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          <span>English</span>
+        </a>
+
+        <a href="mailto:farzadrahnama2@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs sm:text-sm transition-all shadow-md shadow-sky-600/20">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>ارتباط با من</span>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-4 space-y-3 font-medium text-slate-300 text-sm">
+      <a href="#about" class="block hover:text-sky-400 py-1">درباره من</a>
+      <a href="#projects" class="block hover:text-sky-400 py-1">پروژه‌های شاخص</a>
+      <a href="#skills" class="block hover:text-sky-400 py-1">مهارت‌های تخصصی</a>
+      <a href="#experience" class="block hover:text-sky-400 py-1">سوابق شغلی</a>
+      <a href="#certifications" class="block hover:text-sky-400 py-1">مدارک و تحصیلات</a>
+      <div class="pt-2 flex items-center gap-3">
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 text-sky-400 text-xs font-mono">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i> English Site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 pb-16">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Bio Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>آماده همکاری در پروژه و مدیریت زیرساخت‌های سازمانی</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            فرزاد رهنما | <span class="gradient-text">متخصص ارشد زیرساخت و مدیر سیستم</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
+            دارای <strong class="text-white font-semibold">بیش از ۸ سال تجربه تخصصی</strong> در مدیریت و نگهداری محیط‌های سازمانی ویندوز و لینوکس، مجازی‌سازی، امنیت شبکه، سیستم‌های پشتیبان‌گیری و اتوماسیون مدرن مبتنی بر <span class="text-sky-400 font-mono">هوش مصنوعی</span>.
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-400">
+            در حال حاضر ارائه خدمات راهبری و پشتیبانی زیرساخت IT به حدود ۱۰ شرکت متوسط با همکاری پارتنر آلمانی (<em class="text-slate-300">Network4You در مونیخ</em>).
+          </p>
+
+          <!-- Highlights Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-medium text-slate-300">
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="server" class="w-4 h-4 text-sky-400"></i>
+              <span>VMware & Hyper-V</span>
+            </div>
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+              <span>فایروال‌های سخت‌افزاری</span>
+            </div>
+            <div class="glass-card p-3 rounded-xl flex items-center gap-2.5">
+              <i data-lucide="code-2" class="w-4 h-4 text-indigo-400"></i>
+              <span>اتوماسیون پایتون و پاورشل</span>
+            </div>
+          </div>
+
+          <!-- Buttons & Links -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 transition-all flex items-center gap-2">
+              <i data-lucide="box" class="w-4 h-4"></i>
+              <span>مشاهده پروژه‌ها</span>
+            </a>
+            <a href="https://github.com/farzadrahnama" target="_blank" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+              <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+              <span>گیت‌هاب (GitHub)</span>
+            </a>
+            <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+              <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+              <span>لینکدین</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Widget Column -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+            <div class="terminal-header px-4 py-3 flex items-center justify-between" dir="ltr">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
+              <span class="text-xs font-mono text-slate-400">farzad@infra-node-01:~</span>
+              <div class="w-4"></div>
+            </div>
+            
+            <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 space-y-3 bg-slate-950/90 leading-relaxed" dir="ltr">
+              <div class="flex items-center gap-2 text-slate-400">
+                <span class="text-emerald-400">$</span>
+                <span>sysinfo --summary</span>
+              </div>
+              <div class="pl-4 border-l-2 border-sky-500/40 space-y-1.5 text-slate-300">
+                <p><span class="text-slate-500">Host:</span> Farzad Rahnama (Tehran, Iran)</p>
+                <p><span class="text-slate-500">Degree:</span> MS Computer Engineering (GPA 3.5)</p>
+                <p><span class="text-slate-500">Current Role:</span> SysAdmin @ Techranco / Network4You</p>
+                <p><span class="text-slate-500">Core Stack:</span> VMware ESXi, Hyper-V, FortiGate, Zabbix, Veeam</p>
+                <p><span class="text-slate-500">Automation:</span> Python (FastAPI, SQLite), PowerShell, Docker</p>
+              </div>
+
+              <div class="flex items-center gap-2 text-slate-400 pt-2">
+                <span class="text-emerald-400">$</span>
+                <span>check-status --active-services</span>
+              </div>
+              <div class="pl-4 border-l-2 border-emerald-500/40 space-y-1 text-xs">
+                <p class="text-emerald-400">✔ Enterprise Virtualization [OPERATIONAL]</p>
+                <p class="text-emerald-400">✔ Veeam Backup & Disaster Recovery [READY]</p>
+                <p class="text-emerald-400">✔ Firewall Security Hardening [ACTIVE]</p>
+                <p class="text-emerald-400">✔ AI-Assisted Automation [ONLINE]</p>
+              </div>
+
+              <div class="pt-3 text-slate-500 text-xs flex items-center justify-between border-t border-slate-800">
+                <span>Status: Open for Enterprise IT Ops</span>
+                <span class="text-sky-400 animate-pulse">● Live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs">
+          <i data-lucide="code" class="w-3.5 h-3.5"></i>
+          <span>پروژه‌های مهندسی و متن‌باز</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">پروژه‌های شاخص</h2>
+        <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
+          نمایش ابزارهای شبکه با کارایی بالا، پلتفرم‌های اتوماسیون سفارشی و پروژه‌های مهاجرت مجازی‌سازی سازمانی.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- PROJECT 1: Gaming SmartDNS & SNI Proxy Hub -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover flex flex-col justify-between border border-slate-800">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-medium">پروژه متن‌باز شاخص</span>
+              <a href="https://github.com/farzadrahnama/gaming-smartdns" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors flex items-center gap-1 text-xs">
+                <span>مشاهده در GitHub</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-white">
+              سامانه Gaming SmartDNS و پروکسی شفاف SNI
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              طراحی و توسعه پلتفرم پینـگ پایین SmartDNS و پروکسی شفاف SNI با استفاده از مهندسی توسعه مبتنی بر هوش مصنوعی (AI Agentic Coding) برای عبور از تحریم‌های منطقه‌ای با <strong class="text-white">تاخیر زیر ۱ میلی‌ثانیه</strong> و <strong class="text-emerald-400">صفر میلی‌ثانیه پینگ اضافه در بازی</strong>.
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">پورتال مدیریتی FastAPI:</strong> وب‌پنل چندکاربره با SQLite ORM، وایت‌لیست هوشمند آی‌پی‌ها و شنود زنده کوئری‌های DNS.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">امنیت کرنل لینوکس:</strong> یکپارچه‌سازی با <code class="text-sky-300 font-mono" dir="ltr">ipset + iptables</code> جهت مسدودسازی خودکار ترافیک ناشناس و جلوگیری از حملات DDoS.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">استقرار عملیاتی:</strong> اسکریپت‌های نصب خودکار لینوکس (<code class="text-sky-300 font-mono" dir="ltr">setup.sh</code>)، سرویس‌های پایداری systemd و کانتینری‌سازی Docker.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono" dir="ltr">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Python (FastAPI)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">SmartDNS / SNI Proxy</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Linux Firewall</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Docker</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-purple-300">AI Coding</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Enterprise Migrations -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 glass-card-hover flex flex-col justify-between border border-slate-800">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-medium">عملیات سازمانی</span>
+              <span class="text-slate-500 text-xs font-mono">Multi-Client Deployment</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white">
+              مهاجرت مجازی‌سازی ESXi به Hyper-V و اتوماسیون Zabbix
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              برنامه‌ریزی و اجرای پروژه‌های مهاجرت سرورهای مجازی و استانداردسازی خطوط استقرار ایجنت‌های مانیتورینگ در شرکت‌های متعدد.
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">مهاجرت هایپروایزر:</strong> انتقال کامل VMware ESXi به Microsoft Hyper-V با ارزیابی وابستگی‌ها و حداقل قطعی سرویس.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">اتوماسیون زابیکس:</strong> نصب و ارتقای خودکار ایجنت‌های مانیتورینگ Zabbix از طریق Group Policy (GPO) و اسکریپت‌های PowerShell.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                <span><strong class="text-slate-200">پشتیبان‌گیری و بازآوری:</strong> ارتقا و نگهداری Veeam Backup & Replication و صحت‌سنجی آمادگی بازیابی اطلاعات.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs font-mono" dir="ltr">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">VMware ESXi</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Hyper-V</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Zabbix Monitoring</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">PowerShell</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-sky-300">Veeam Backup</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX SECTION -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>توانمندی‌های فنی</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">مهارت‌های تخصصی</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-2">
+            <i data-lucide="monitor" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">سرویس‌های مایکروسافت و ویندوز</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Windows Server, Active Directory, Group Policy (GPO), DNS, DHCP, Exchange Server 2019, SCCM, مدیریت دسترسی‌ها.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 mb-2">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">مدیریت لینوکس و سیستم‌ها</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            راهبری سرورهای لینوکس (Ubuntu/Debian)، عیب‌یابی سرویس‌ها، به‌روزرسانی امنیتی کرنل، سرویس‌های systemd، Bash و مدیریت ریپوزیتوری Git.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-2">
+            <i data-lucide="hard-drive" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">مجازی‌سازی و پشتیبان‌گیری</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            VMware ESXi, vCenter, Microsoft Hyper-V, Veeam Backup & Replication، پایش ظرفیت استوریج و تست‌های آمادگی بازیابی.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-2">
+            <i data-lucide="network" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">شبکه و ارتباطات</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            TCP/IP, VLANs, LAN/WAN, سوئیچینگ و روتینگ سیسکو، فیبر نوری، تجهیزات بی‌سیم (Ubiquiti UniFi, D-Link).
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 mb-2">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">امنیت و فایروال</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            FortiGate, Juniper, Sophos, WatchGuard, Securepoint, Cyberoam, Trend Micro, Cisco ISE (AAA), گواهی‌های SSL/TLS و ipset/iptables.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 space-y-3 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 mb-2">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">اتوماسیون با هوش مصنوعی</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            توسعه سریع ابزارها با ایجنت‌های هوش مصنوعی، Python (FastAPI)، اسکریپت‌نویسی PowerShell، REST APIها، کانتینرهای Docker و CI/CD.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="space-y-4 mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>سوابق کاری</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">سوابق شغلی و حرفه‌ای</h2>
+      </div>
+
+      <div class="relative border-r-2 border-slate-800 mr-4 sm:mr-6 space-y-12">
+        
+        <!-- EXPERIENCE 1: Techranco -->
+        <div class="relative pr-6 sm:pr-8 group">
+          <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 ring-4 ring-slate-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">راهبر ارشد سیستم‌ها (System Administrator)</h3>
+                <p class="text-sky-400 text-sm font-medium">شرکت تک‌رانکو <span class="text-slate-400 font-normal">| همکاری با Network4You (مونیخ، آلمان)</span></p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono" dir="ltr">Feb 2025 – Present</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>ارائه خدمات راهبری زیرساخت و پشتیبانی فنی برای ۱۰ شرکت متوسط با همکاری پارتنر آلمانی.</li>
+              <li>مدیریت و نگهداری Active Directory، Group Policy، DNS/DHCP، Exchange 2019، VMware ESXi/vCenter و Hyper-V.</li>
+              <li>راهبری مخازن و سرویس‌های پشتیبان‌گیری Veeam Backup & Replication و اطمینان از آمادگی بازیابی اطلاعات.</li>
+              <li>پایش زنده سلامت سرویس‌ها با Zabbix و NinjaOne جهت پیشگیری از اختلال و قطعی‌های احتمالی.</li>
+              <li>پیکربندی و عیب‌یابی فایروال‌های FortiGate، Sophos، WatchGuard و Securepoint.</li>
+              <li>پشتیبانی از تیم‌های توسعه از طریق مدیریت ریپوزیتوری‌های Git و اتوماسیون کاربردی با PowerShell و پایتون.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2: DMC -->
+        <div class="relative pr-6 sm:pr-8 group">
+          <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-950 group-hover:bg-sky-500 transition-colors"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">کارشناس فناوری اطلاعات (IT Specialist)</h3>
+                <p class="text-sky-400 text-sm font-medium">شرکت داور محرک (DMC)</p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono" dir="ltr">May 2021 – Feb 2025</span>
+            </div>
+
+            <p class="text-xs text-slate-400 font-mono" dir="ltr">Environment: FortiGate, Juniper, Windows Server, VMware ESXi/vCenter, Exchange, SCCM, SolarWinds, PRTG.</p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>جایگزینی فایروال‌های نرم‌افزاری با تجهیزات سخت‌افزاری FortiGate و Juniper جهت ارتقای امنیت شبکه.</li>
+              <li>پیاده‌سازی مانیتورینگ SolarWinds و PRTG برای شناسایی پیش‌دستانه خطاهایش شبکه و کاهش قطع سرویس.</li>
+              <li>ارتقا و راه‌اندازی vCenter و ESXi جهت بهبود مدیریت متمرکز و بهینه‌سازی منابع سرورها.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 3: MIGT -->
+        <div class="relative pr-6 sm:pr-8 group">
+          <div class="absolute -right-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-950 group-hover:bg-sky-500 transition-colors"></div>
+          
+          <div class="glass-card rounded-xl p-6 space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">متخصص شبکه (Network Specialist)</h3>
+                <p class="text-sky-400 text-sm font-medium">شرکت توربین‌های گازی صنعتی خاورمیانه (MIGT)</p>
+              </div>
+              <span class="px-3 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono" dir="ltr">Nov 2017 – May 2021</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside leading-relaxed">
+              <li>پیکربندی و نگهداری سوئیچ‌ها و روترهای سیسکو جهت بهبود ترافیک و پایداری شبکه صنعتی.</li>
+              <li>مدیریت فایروال‌های Cyberoam و Sophos و پیاده‌سازی Cisco ISE (AAA) جهت ارتقای امنیت دسترسی LAN/WLAN.</li>
+              <li>انجام تست‌های نفوذ کنترل‌شده با Kali Linux برای شناسایی و رفع آسیب‌پذیری‌های امنیتی شبکه.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & EDUCATION SECTION -->
+    <section id="certifications" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Certifications -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>مدارک و گواهینامه‌ها</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">گواهینامه‌های بین‌المللی و مقالات</h2>
+
+          <div class="space-y-3">
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-red-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">CEH v10 – هکر قانونمند گواهی‌شده</h4>
+                  <p class="text-xs text-slate-400" dir="ltr">EC-Council (2020)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="network" class="w-5 h-5 text-sky-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">CCNP Boot Camp & CCNA Security</h4>
+                  <p class="text-xs text-slate-400" dir="ltr">Cisco Certified Network Professional / Security (2019)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="cloud" class="w-5 h-5 text-blue-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">MCSE – Cloud Platform & Infrastructure Pack</h4>
+                  <p class="text-xs text-slate-400" dir="ltr">Microsoft Certified Systems Engineer (2018)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-slate-800">
+              <div class="flex items-center gap-3">
+                <i data-lucide="book-open" class="w-5 h-5 text-purple-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-white">مقاله علمی منتشر شده</h4>
+                  <p class="text-xs text-slate-400">«تشخیص نفوذ با استفاده از طبقه‌بندی رفتار حملات» (سیویلیکا، اردیبهشت ۱۳۹۶)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            <span>سوابق تحصیلی</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">تحصیلات دانشگاهی</h2>
+
+          <div class="space-y-4">
+            <div class="glass-card p-6 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-start">
+                <h4 class="text-base font-bold text-white">کارشناسی ارشد مهندسی کامپیوتر (نرم‌افزار)</h4>
+                <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded">معدل ۱۷.۵ (GPA 3.5)</span>
+              </div>
+              <p class="text-sm text-slate-300">دانشگاه علم و فرهنگ تهران</p>
+              <p class="text-xs text-slate-500 font-mono">۱۳۹۳ – ۱۳۹۵</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl border border-slate-800 space-y-2">
+              <div class="flex justify-between items-start">
+                <h4 class="text-base font-bold text-white">کارشناسی مهندسی کامپیوتر (تکنولوژی نرم‌افزار)</h4>
+                <span class="text-xs font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded">معدل ۱۸ (GPA 3.6)</span>
+              </div>
+              <p class="text-sm text-slate-300">دانشگاه آزاد اسلامی واحد لاهیجان</p>
+              <p class="text-xs text-slate-500 font-mono">۱۳۹۰ – ۱۳۹۲</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT BANNER -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 border-t border-slate-800/80">
+      <div class="glass-card rounded-2xl p-8 sm:p-12 text-center space-y-6 border border-slate-800">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          آماده همکاری در پروژه‌های زیرساخت و شبکه
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+          جهت مشاوره، مدیریت زیرساخت‌های سازمانی، مهاجرت سرورها و توسعه ابزارهای اتوماسیون با من در ارتباط باشید.
+        </p>
+        
+        <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+          <a href="mailto:farzadrahnama2@gmail.com" class="px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm transition-all shadow-lg shadow-sky-600/20 flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>farzadrahnama2@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="px-6 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+            <span>ارتباط در لینکدین</span>
+          </a>
+        </div>
+
+        <div class="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© ۲۰۲۶ فرزاد رهنما - تمامی حقوق محفوظ است.</p>
+          <div class="flex items-center gap-4" dir="ltr">
+            <a href="https://github.com/farzadrahnama" target="_blank" class="hover:text-slate-300">GitHub</a>
+            <span>•</span>
+            <a href="https://linkedin.com/in/farzadrahnama" target="_blank" class="hover:text-slate-300">LinkedIn</a>
+            <span>•</span>
+            <span>Tehran, Iran (+98 938 712 8048)</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
